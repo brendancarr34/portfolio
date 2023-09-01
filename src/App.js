@@ -25,10 +25,8 @@ function App() {
     //   </header>
     // </div>
     <Router>
-      <Switch>
-        <Route exact path="/" component={HomePage}/>
-        <Route path="/about" component={AboutPage} />
-      </Switch>
+      <Route exact path="/" component={HomePage}/>
+      <Route path="/about" component={AboutPage} />
     </Router>
   );
 }
