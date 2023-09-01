@@ -1,7 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-// import logo from './logo.svg';
-// import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import logo from './logo.svg';
+import './App.css';
 import HomePage from './components/HomePage';
 import AboutPage from './components/AboutPage';
 
@@ -12,7 +12,7 @@ function App() {
     //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />
     //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
+    //       Edit <code>src/App.js</code> and save to test.
     //     </p>
     //     <a
     //       className="App-link"
@@ -24,9 +24,11 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-    <Router basename={process.env.PUBLIC_URL}>
-      <Route exact path="/" component={HomePage}/>
-      <Route path="/about" component={AboutPage} />
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<HomePage/>}/>
+        <Route path="/about" element={<AboutPage/>} />
+      </Routes>
     </Router>
   );
 }
