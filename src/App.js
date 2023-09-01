@@ -24,7 +24,7 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Route exact path="/" component={HomePage}/>
       <Route path="/about" component={AboutPage} />
     </Router>
