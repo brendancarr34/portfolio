@@ -1,25 +1,31 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+// import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createHashRouter, RouterProvider } from "react-router-dom";
+import AboutPage from './components/AboutPage';
+import HomePage from './components/HomePage';
 
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
-    element: <div>Hello world!</div>,
+    element: <App/>
   },
+  {
+    path: "/about",
+    element: <AboutPage/>
+  },
+  {
+    path: "/home",
+    element: <HomePage/>
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <App /> */}
     <RouterProvider router={router} />
   </React.StrictMode>
 );
